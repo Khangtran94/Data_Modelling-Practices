@@ -1,0 +1,727 @@
+{
+  "tables": [
+    {
+      "id": "table-id-1778569149523-zl09q893t",
+      "name": "member",
+      "fields": [
+        {
+          "id": "field-id-1778569149523-slzyq1jbz",
+          "name": "id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1778569162533",
+          "name": "name",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1778569790828",
+          "name": "phone",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1778569201646",
+          "name": "email",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1778569222168",
+          "name": "birthdate",
+          "type": "DATE",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1778569173084",
+          "name": "membership_status",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1778569241448",
+          "name": "membership_joined",
+          "type": "DATE",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1778571401031",
+          "name": "street",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1778571405914",
+          "name": "state",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1778571408742",
+          "name": "city",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1778569267626-meia4yd7a",
+      "name": "book",
+      "fields": [
+        {
+          "id": "field-id-1778569267626-f7208l7wd",
+          "name": "id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1778569286073",
+          "name": "title",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1778571679168",
+          "name": "author_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1778569311233-e06t7xw1j",
+            "fieldId": "field-id-1778569311233-wy3hwt2hh"
+          }
+        },
+        {
+          "id": "field-1778569428017",
+          "name": "genre",
+          "type": "TEXT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1778569438741",
+          "name": "release_year",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1778569926723",
+          "name": "number_on_stock",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1778571560525",
+          "name": "total_copies_available",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1778569311233-e06t7xw1j",
+      "name": "author",
+      "fields": [
+        {
+          "id": "field-id-1778569311233-wy3hwt2hh",
+          "name": "id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1778569406387",
+          "name": "name",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1778569411313",
+          "name": "country",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1778569625635-4zlayoi10",
+      "name": "borrow_activity",
+      "fields": [
+        {
+          "id": "field-id-1778569625635-2wye2kjhv",
+          "name": "id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1778569637749",
+          "name": "book_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1778569267626-meia4yd7a",
+            "fieldId": "field-id-1778569267626-f7208l7wd"
+          }
+        },
+        {
+          "id": "field-1778569643637",
+          "name": "member_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1778569149523-zl09q893t",
+            "fieldId": "field-id-1778569149523-slzyq1jbz"
+          }
+        },
+        {
+          "id": "field-1778569758548",
+          "name": "borrow_date",
+          "type": "DATE",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1778569859125",
+          "name": "due_date",
+          "type": "DATE",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1778569864618",
+          "name": "return_date",
+          "type": "DATE",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "id-1778569949959-aqn532poh",
+      "name": "borrow_activity.member_id → member.id",
+      "sourceTableId": "table-id-1778569625635-4zlayoi10",
+      "sourceFieldId": "field-1778569643637",
+      "targetTableId": "table-id-1778569149523-zl09q893t",
+      "targetFieldId": "field-id-1778569149523-slzyq1jbz",
+      "type": "one-to-one"
+    },
+    {
+      "id": "id-1778570832151-psbjnzxnj",
+      "name": "book.id → borrow_activity.book_id",
+      "sourceTableId": "table-id-1778569267626-meia4yd7a",
+      "sourceFieldId": "field-id-1778569267626-f7208l7wd",
+      "targetTableId": "table-id-1778569625635-4zlayoi10",
+      "targetFieldId": "field-1778569637749",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1778571715161-xgfdbvelo",
+      "name": "book.author_id → author.id",
+      "sourceTableId": "table-id-1778569311233-e06t7xw1j",
+      "sourceFieldId": "field-id-1778569311233-wy3hwt2hh",
+      "targetTableId": "table-id-1778569267626-meia4yd7a",
+      "targetFieldId": "field-1778571679168",
+      "type": "one-to-many"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "table-id-1778569149523-zl09q893t",
+      "type": "tableNode",
+      "position": {
+        "x": 1260,
+        "y": 0
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1778569149523-zl09q893t",
+          "name": "member",
+          "fields": [
+            {
+              "id": "field-id-1778569149523-slzyq1jbz",
+              "name": "id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1778569162533",
+              "name": "name",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1778569790828",
+              "name": "phone",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1778569201646",
+              "name": "email",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1778569222168",
+              "name": "birthdate",
+              "type": "DATE",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1778569173084",
+              "name": "membership_status",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1778569241448",
+              "name": "membership_joined",
+              "type": "DATE",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1778571401031",
+              "name": "street",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1778571405914",
+              "name": "state",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1778571408742",
+              "name": "city",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 432
+    },
+    {
+      "id": "table-id-1778569267626-meia4yd7a",
+      "type": "tableNode",
+      "position": {
+        "x": 500,
+        "y": 42
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1778569267626-meia4yd7a",
+          "name": "book",
+          "fields": [
+            {
+              "id": "field-id-1778569267626-f7208l7wd",
+              "name": "id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1778569286073",
+              "name": "title",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1778571679168",
+              "name": "author_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1778569311233-e06t7xw1j",
+                "fieldId": "field-id-1778569311233-wy3hwt2hh"
+              }
+            },
+            {
+              "id": "field-1778569428017",
+              "name": "genre",
+              "type": "TEXT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1778569438741",
+              "name": "release_year",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1778569926723",
+              "name": "number_on_stock",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1778571560525",
+              "name": "total_copies_available",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 324
+    },
+    {
+      "id": "table-id-1778569311233-e06t7xw1j",
+      "type": "tableNode",
+      "position": {
+        "x": 120,
+        "y": 159
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1778569311233-e06t7xw1j",
+          "name": "author",
+          "fields": [
+            {
+              "id": "field-id-1778569311233-wy3hwt2hh",
+              "name": "id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1778569406387",
+              "name": "name",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1778569411313",
+              "name": "country",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 181
+    },
+    {
+      "id": "table-id-1778569625635-4zlayoi10",
+      "type": "tableNode",
+      "position": {
+        "x": 880,
+        "y": 56
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1778569625635-4zlayoi10",
+          "name": "borrow_activity",
+          "fields": [
+            {
+              "id": "field-id-1778569625635-2wye2kjhv",
+              "name": "id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1778569637749",
+              "name": "book_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1778569267626-meia4yd7a",
+                "fieldId": "field-id-1778569267626-f7208l7wd"
+              }
+            },
+            {
+              "id": "field-1778569643637",
+              "name": "member_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1778569149523-zl09q893t",
+                "fieldId": "field-id-1778569149523-slzyq1jbz"
+              }
+            },
+            {
+              "id": "field-1778569758548",
+              "name": "borrow_date",
+              "type": "DATE",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1778569859125",
+              "name": "due_date",
+              "type": "DATE",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1778569864618",
+              "name": "return_date",
+              "type": "DATE",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 289
+    }
+  ],
+  "edges": [
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1778569625635-4zlayoi10",
+      "sourceHandle": "field-1778569643637-source",
+      "target": "table-id-1778569149523-zl09q893t",
+      "targetHandle": "field-id-1778569149523-slzyq1jbz-target",
+      "id": "edge-id-1778569949959-aqn532poh",
+      "data": {
+        "relationship": {
+          "id": "id-1778569949959-aqn532poh",
+          "name": "borrow_activity.member_id → member.id",
+          "sourceTableId": "table-id-1778569625635-4zlayoi10",
+          "sourceFieldId": "field-1778569643637",
+          "targetTableId": "table-id-1778569149523-zl09q893t",
+          "targetFieldId": "field-id-1778569149523-slzyq1jbz",
+          "type": "one-to-one"
+        }
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1778569267626-meia4yd7a",
+      "sourceHandle": "field-id-1778569267626-f7208l7wd-source",
+      "target": "table-id-1778569625635-4zlayoi10",
+      "targetHandle": "field-1778569637749-target",
+      "id": "edge-id-1778570832151-psbjnzxnj",
+      "data": {
+        "relationship": {
+          "id": "id-1778570832151-psbjnzxnj",
+          "name": "book.id → borrow_activity.book_id",
+          "sourceTableId": "table-id-1778569267626-meia4yd7a",
+          "sourceFieldId": "field-id-1778569267626-f7208l7wd",
+          "targetTableId": "table-id-1778569625635-4zlayoi10",
+          "targetFieldId": "field-1778569637749",
+          "type": "one-to-many"
+        }
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1778570510678-twtavs7b2",
+      "sourceHandle": "field-id-1778570510678-1zdjkl5kk-source",
+      "target": "table-id-1778569267626-meia4yd7a",
+      "targetHandle": "field-id-1778569267626-f7208l7wd-target",
+      "id": "edge-id-1778570844550-q9ygk4819",
+      "data": {
+        "relationship": {
+          "id": "id-1778570844550-q9ygk4819",
+          "name": "book_author.book_id → book.id",
+          "sourceTableId": "table-id-1778570510678-twtavs7b2",
+          "sourceFieldId": "field-id-1778570510678-1zdjkl5kk",
+          "targetTableId": "table-id-1778569267626-meia4yd7a",
+          "targetFieldId": "field-id-1778569267626-f7208l7wd",
+          "type": "one-to-one"
+        }
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1778570510678-twtavs7b2",
+      "sourceHandle": "field-1778570561273-source",
+      "target": "table-id-1778569311233-e06t7xw1j",
+      "targetHandle": "field-id-1778569311233-wy3hwt2hh-target",
+      "id": "edge-id-1778570858259-gzgw656gr",
+      "data": {
+        "relationship": {
+          "id": "id-1778570858259-gzgw656gr",
+          "name": "book_author.author_id → author.id",
+          "sourceTableId": "table-id-1778570510678-twtavs7b2",
+          "sourceFieldId": "field-1778570561273",
+          "targetTableId": "table-id-1778569311233-e06t7xw1j",
+          "targetFieldId": "field-id-1778569311233-wy3hwt2hh",
+          "type": "one-to-one"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1778569311233-e06t7xw1j",
+      "sourceHandle": "field-id-1778569311233-wy3hwt2hh-source",
+      "target": "table-id-1778569267626-meia4yd7a",
+      "targetHandle": "field-1778571679168-target",
+      "id": "edge-id-1778571715161-xgfdbvelo",
+      "data": {
+        "relationship": {
+          "id": "id-1778571715161-xgfdbvelo",
+          "name": "book.author_id → author.id",
+          "sourceTableId": "table-id-1778569311233-e06t7xw1j",
+          "sourceFieldId": "field-id-1778569311233-wy3hwt2hh",
+          "targetTableId": "table-id-1778569267626-meia4yd7a",
+          "targetFieldId": "field-1778571679168",
+          "type": "one-to-many"
+        }
+      }
+    }
+  ],
+  "timestamp": 1778572599380,
+  "version": "1.0"
+}
