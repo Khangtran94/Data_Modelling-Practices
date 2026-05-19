@@ -1,0 +1,1312 @@
+{
+  "tables": [
+    {
+      "id": "table-id-1779177502576-2c3npmigv",
+      "name": "Dim_Book",
+      "fields": [
+        {
+          "id": "field-id-1779177502576-fmqbnwija",
+          "name": "book_id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1779177703997",
+          "name": "title",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779177708474",
+          "name": "genre",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779177721371",
+          "name": "isbn",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779177718027",
+          "name": "publication_year",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779180385725",
+          "name": "main_author_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1779177508602-33rll4qig",
+      "name": "Dim_Patron",
+      "fields": [
+        {
+          "id": "field-id-1779177508602-65ml0embr",
+          "name": "patron_id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1779177838260",
+          "name": "patron_name",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779177849510",
+          "name": "membership_type",
+          "type": "ENUM",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779177858118",
+          "name": "join_date",
+          "type": "DATE",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779177869218",
+          "name": "branch_preference",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779180886114",
+          "name": "valid_from",
+          "type": "DATE",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779180888864",
+          "name": "valid_to",
+          "type": "DATE",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779180921706",
+          "name": "active_status",
+          "type": "BOOLEAN",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1779177514891-bw4a395wh",
+      "name": "Dim_Branch",
+      "fields": [
+        {
+          "id": "field-id-1779177514891-l1rpjsgda",
+          "name": "branch_id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1779177905641",
+          "name": "branch_name",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779177909810",
+          "name": "address",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779177914362",
+          "name": "manager_name",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1779177525912-93nhoq6vs",
+      "name": "Fct_Loan",
+      "fields": [
+        {
+          "id": "field-id-1779177525912-jpmpfrn6o",
+          "name": "loan_id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1779177956438",
+          "name": "patron_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1779177508602-33rll4qig",
+            "fieldId": "field-id-1779177508602-65ml0embr"
+          }
+        },
+        {
+          "id": "field-1779177962349",
+          "name": "book_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1779177502576-2c3npmigv",
+            "fieldId": "field-id-1779177502576-fmqbnwija"
+          }
+        },
+        {
+          "id": "field-1779177992659",
+          "name": "checkout_date",
+          "type": "DATE",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1779177531002-kn31nvyxf",
+            "fieldId": "field-id-1779177531002-ir00o1wy9"
+          }
+        },
+        {
+          "id": "field-1779177999788",
+          "name": "due_date",
+          "type": "DATE",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1779177531002-kn31nvyxf",
+            "fieldId": "field-id-1779177531002-ir00o1wy9"
+          }
+        },
+        {
+          "id": "field-1779178006411",
+          "name": "return_date",
+          "type": "DATE",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1779177531002-kn31nvyxf",
+            "fieldId": "field-id-1779177531002-ir00o1wy9"
+          }
+        },
+        {
+          "id": "field-1779178022554",
+          "name": "branch_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1779177514891-bw4a395wh",
+            "fieldId": "field-id-1779177514891-l1rpjsgda"
+          }
+        },
+        {
+          "id": "field-1779178925050",
+          "name": "loan_days",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779178946839",
+          "name": "is_overdued",
+          "type": "BOOLEAN",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779181236213",
+          "name": "days_overdued",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1779177531002-kn31nvyxf",
+      "name": "Dim_Date",
+      "fields": [
+        {
+          "id": "field-id-1779177531002-ir00o1wy9",
+          "name": "date",
+          "type": "DATE",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1779178241374",
+          "name": "year",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779178251561",
+          "name": "quarter",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779178255161",
+          "name": "month",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779178360428",
+          "name": "month_name",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779178350340",
+          "name": "day_name",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779178372823",
+          "name": "day_of_week",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779178383616",
+          "name": "is_holiday",
+          "type": "BOOLEAN",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779178395881",
+          "name": "is_weekend",
+          "type": "BOOLEAN",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1779177592194-zy2amyj12",
+      "name": "Dim_Author",
+      "fields": [
+        {
+          "id": "field-id-1779177592194-edhgqhcdx",
+          "name": "author_id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1779177607111",
+          "name": "name",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779177622138",
+          "name": "date_of_birth",
+          "type": "DATE",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779177627462",
+          "name": "country",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779177689599",
+          "name": "status",
+          "type": "ENUM",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1779179286848-s2tryixch",
+      "name": "Bridge_Book_Author",
+      "fields": [
+        {
+          "id": "field-id-1779179286848-tex2o2zen",
+          "name": "book_id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true,
+          "foreignKey": {
+            "tableId": "table-id-1779177502576-2c3npmigv",
+            "fieldId": "field-id-1779177502576-fmqbnwija"
+          }
+        },
+        {
+          "id": "field-1779179303041",
+          "name": "author_id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true,
+          "foreignKey": {
+            "tableId": "table-id-1779177592194-zy2amyj12",
+            "fieldId": "field-id-1779177592194-edhgqhcdx"
+          }
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "id-1779177966484-0jiuvm56o",
+      "name": "Dim_Book.book_id → Fct_Loan.book_id",
+      "sourceTableId": "table-id-1779177502576-2c3npmigv",
+      "sourceFieldId": "field-id-1779177502576-fmqbnwija",
+      "targetTableId": "table-id-1779177525912-93nhoq6vs",
+      "targetFieldId": "field-1779177962349",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1779177975374-mollv0yac",
+      "name": "Dim_Patron.patron_id → Fct_Loan.patron_id",
+      "sourceTableId": "table-id-1779177508602-33rll4qig",
+      "sourceFieldId": "field-id-1779177508602-65ml0embr",
+      "targetTableId": "table-id-1779177525912-93nhoq6vs",
+      "targetFieldId": "field-1779177956438",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1779178048805-k1vae8inx",
+      "name": "Dim_Branch.branch_id → Fct_Loan.branch_id",
+      "sourceTableId": "table-id-1779177514891-bw4a395wh",
+      "sourceFieldId": "field-id-1779177514891-l1rpjsgda",
+      "targetTableId": "table-id-1779177525912-93nhoq6vs",
+      "targetFieldId": "field-1779178022554",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1779178577286-8fbq8hwfw",
+      "name": "Dim_Date.date → Fct_Loan.checkout_date",
+      "sourceTableId": "table-id-1779177531002-kn31nvyxf",
+      "sourceFieldId": "field-id-1779177531002-ir00o1wy9",
+      "targetTableId": "table-id-1779177525912-93nhoq6vs",
+      "targetFieldId": "field-1779177992659",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1779178586815-dz6j1ka7b",
+      "name": "Dim_Date.date → Fct_Loan.due_date",
+      "sourceTableId": "table-id-1779177531002-kn31nvyxf",
+      "sourceFieldId": "field-id-1779177531002-ir00o1wy9",
+      "targetTableId": "table-id-1779177525912-93nhoq6vs",
+      "targetFieldId": "field-1779177999788",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1779178589373-sauzpf061",
+      "name": "Dim_Date.date → Fct_Loan.return_date",
+      "sourceTableId": "table-id-1779177531002-kn31nvyxf",
+      "sourceFieldId": "field-id-1779177531002-ir00o1wy9",
+      "targetTableId": "table-id-1779177525912-93nhoq6vs",
+      "targetFieldId": "field-1779178006411",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1779179326069-aobmygdmy",
+      "name": "Dim_Author.author_id → book_bridge_author.author_id",
+      "sourceTableId": "table-id-1779177592194-zy2amyj12",
+      "sourceFieldId": "field-id-1779177592194-edhgqhcdx",
+      "targetTableId": "table-id-1779179286848-s2tryixch",
+      "targetFieldId": "field-1779179303041",
+      "type": "one-to-one"
+    },
+    {
+      "id": "id-1779179336861-k2d4neyw9",
+      "name": "book_bridge_author.book_id → Dim_Book.book_id",
+      "sourceTableId": "table-id-1779179286848-s2tryixch",
+      "sourceFieldId": "field-id-1779179286848-tex2o2zen",
+      "targetTableId": "table-id-1779177502576-2c3npmigv",
+      "targetFieldId": "field-id-1779177502576-fmqbnwija",
+      "type": "one-to-one"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "table-id-1779177502576-2c3npmigv",
+      "type": "tableNode",
+      "position": {
+        "x": 760,
+        "y": 0
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1779177502576-2c3npmigv",
+          "name": "Dim_Book",
+          "fields": [
+            {
+              "id": "field-id-1779177502576-fmqbnwija",
+              "name": "book_id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1779177703997",
+              "name": "title",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779177708474",
+              "name": "genre",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779177721371",
+              "name": "isbn",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779177718027",
+              "name": "publication_year",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779180385725",
+              "name": "main_author_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 289
+    },
+    {
+      "id": "table-id-1779177508602-33rll4qig",
+      "type": "tableNode",
+      "position": {
+        "x": 660,
+        "y": 300
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1779177508602-33rll4qig",
+          "name": "Dim_Patron",
+          "fields": [
+            {
+              "id": "field-id-1779177508602-65ml0embr",
+              "name": "patron_id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1779177838260",
+              "name": "patron_name",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779177849510",
+              "name": "membership_type",
+              "type": "ENUM",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779177858118",
+              "name": "join_date",
+              "type": "DATE",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779177869218",
+              "name": "branch_preference",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779180886114",
+              "name": "valid_from",
+              "type": "DATE",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779180888864",
+              "name": "valid_to",
+              "type": "DATE",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779180921706",
+              "name": "active_status",
+              "type": "BOOLEAN",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 360,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 660,
+        "y": 300
+      },
+      "dragging": false
+    },
+    {
+      "id": "table-id-1779177514891-bw4a395wh",
+      "type": "tableNode",
+      "position": {
+        "x": 660,
+        "y": 680
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1779177514891-bw4a395wh",
+          "name": "Dim_Branch",
+          "fields": [
+            {
+              "id": "field-id-1779177514891-l1rpjsgda",
+              "name": "branch_id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1779177905641",
+              "name": "branch_name",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779177909810",
+              "name": "address",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779177914362",
+              "name": "manager_name",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 217,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 660,
+        "y": 680
+      },
+      "dragging": false
+    },
+    {
+      "id": "table-id-1779177525912-93nhoq6vs",
+      "type": "tableNode",
+      "position": {
+        "x": 1560,
+        "y": 380
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1779177525912-93nhoq6vs",
+          "name": "Fct_Loan",
+          "fields": [
+            {
+              "id": "field-id-1779177525912-jpmpfrn6o",
+              "name": "loan_id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1779177956438",
+              "name": "patron_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1779177508602-33rll4qig",
+                "fieldId": "field-id-1779177508602-65ml0embr"
+              }
+            },
+            {
+              "id": "field-1779177962349",
+              "name": "book_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1779177502576-2c3npmigv",
+                "fieldId": "field-id-1779177502576-fmqbnwija"
+              }
+            },
+            {
+              "id": "field-1779177992659",
+              "name": "checkout_date",
+              "type": "DATE",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1779177531002-kn31nvyxf",
+                "fieldId": "field-id-1779177531002-ir00o1wy9"
+              }
+            },
+            {
+              "id": "field-1779177999788",
+              "name": "due_date",
+              "type": "DATE",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1779177531002-kn31nvyxf",
+                "fieldId": "field-id-1779177531002-ir00o1wy9"
+              }
+            },
+            {
+              "id": "field-1779178006411",
+              "name": "return_date",
+              "type": "DATE",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1779177531002-kn31nvyxf",
+                "fieldId": "field-id-1779177531002-ir00o1wy9"
+              }
+            },
+            {
+              "id": "field-1779178022554",
+              "name": "branch_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1779177514891-bw4a395wh",
+                "fieldId": "field-id-1779177514891-l1rpjsgda"
+              }
+            },
+            {
+              "id": "field-1779178925050",
+              "name": "loan_days",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779178946839",
+              "name": "is_overdued",
+              "type": "BOOLEAN",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779181236213",
+              "name": "days_overdued",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 432,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 1560,
+        "y": 380
+      },
+      "dragging": false
+    },
+    {
+      "id": "table-id-1779177531002-kn31nvyxf",
+      "type": "tableNode",
+      "position": {
+        "x": 760,
+        "y": 924
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1779177531002-kn31nvyxf",
+          "name": "Dim_Date",
+          "fields": [
+            {
+              "id": "field-id-1779177531002-ir00o1wy9",
+              "name": "date",
+              "type": "DATE",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1779178241374",
+              "name": "year",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779178251561",
+              "name": "quarter",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779178255161",
+              "name": "month",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779178360428",
+              "name": "month_name",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779178350340",
+              "name": "day_name",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779178372823",
+              "name": "day_of_week",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779178383616",
+              "name": "is_holiday",
+              "type": "BOOLEAN",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779178395881",
+              "name": "is_weekend",
+              "type": "BOOLEAN",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 396,
+      "selected": false,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": 40,
+        "y": 960
+      }
+    },
+    {
+      "id": "table-id-1779177592194-zy2amyj12",
+      "type": "tableNode",
+      "position": {
+        "x": -180,
+        "y": 440
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1779177592194-zy2amyj12",
+          "name": "Dim_Author",
+          "fields": [
+            {
+              "id": "field-id-1779177592194-edhgqhcdx",
+              "name": "author_id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1779177607111",
+              "name": "name",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779177622138",
+              "name": "date_of_birth",
+              "type": "DATE",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779177627462",
+              "name": "country",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779177689599",
+              "name": "status",
+              "type": "ENUM",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 253,
+      "selected": false,
+      "positionAbsolute": {
+        "x": -180,
+        "y": 440
+      },
+      "dragging": false
+    },
+    {
+      "id": "table-id-1779179286848-s2tryixch",
+      "type": "tableNode",
+      "position": {
+        "x": 220,
+        "y": 140
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1779179286848-s2tryixch",
+          "name": "Bridge_Book_Author",
+          "fields": [
+            {
+              "id": "field-id-1779179286848-tex2o2zen",
+              "name": "book_id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true,
+              "foreignKey": {
+                "tableId": "table-id-1779177502576-2c3npmigv",
+                "fieldId": "field-id-1779177502576-fmqbnwija"
+              }
+            },
+            {
+              "id": "field-1779179303041",
+              "name": "author_id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true,
+              "foreignKey": {
+                "tableId": "table-id-1779177592194-zy2amyj12",
+                "fieldId": "field-id-1779177592194-edhgqhcdx"
+              }
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 146,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 220,
+        "y": 140
+      },
+      "dragging": false
+    }
+  ],
+  "edges": [
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1779177502576-2c3npmigv",
+      "sourceHandle": "field-id-1779177502576-fmqbnwija-source",
+      "target": "table-id-1779177525912-93nhoq6vs",
+      "targetHandle": "field-1779177962349-target",
+      "id": "edge-id-1779177966484-0jiuvm56o",
+      "data": {
+        "relationship": {
+          "id": "id-1779177966484-0jiuvm56o",
+          "name": "Dim_Book.book_id → Fct_Loan.book_id",
+          "sourceTableId": "table-id-1779177502576-2c3npmigv",
+          "sourceFieldId": "field-id-1779177502576-fmqbnwija",
+          "targetTableId": "table-id-1779177525912-93nhoq6vs",
+          "targetFieldId": "field-1779177962349",
+          "type": "one-to-many"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1779177508602-33rll4qig",
+      "sourceHandle": "field-id-1779177508602-65ml0embr-source",
+      "target": "table-id-1779177525912-93nhoq6vs",
+      "targetHandle": "field-1779177956438-target",
+      "id": "edge-id-1779177975374-mollv0yac",
+      "data": {
+        "relationship": {
+          "id": "id-1779177975374-mollv0yac",
+          "name": "Dim_Patron.patron_id → Fct_Loan.patron_id",
+          "sourceTableId": "table-id-1779177508602-33rll4qig",
+          "sourceFieldId": "field-id-1779177508602-65ml0embr",
+          "targetTableId": "table-id-1779177525912-93nhoq6vs",
+          "targetFieldId": "field-1779177956438",
+          "type": "one-to-many"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1779177514891-bw4a395wh",
+      "sourceHandle": "field-id-1779177514891-l1rpjsgda-source",
+      "target": "table-id-1779177525912-93nhoq6vs",
+      "targetHandle": "field-1779178022554-target",
+      "id": "edge-id-1779178048805-k1vae8inx",
+      "data": {
+        "relationship": {
+          "id": "id-1779178048805-k1vae8inx",
+          "name": "Dim_Branch.branch_id → Fct_Loan.branch_id",
+          "sourceTableId": "table-id-1779177514891-bw4a395wh",
+          "sourceFieldId": "field-id-1779177514891-l1rpjsgda",
+          "targetTableId": "table-id-1779177525912-93nhoq6vs",
+          "targetFieldId": "field-1779178022554",
+          "type": "one-to-many"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1779177531002-kn31nvyxf",
+      "sourceHandle": "field-id-1779177531002-ir00o1wy9-source",
+      "target": "table-id-1779177525912-93nhoq6vs",
+      "targetHandle": "field-1779177992659-target",
+      "id": "edge-id-1779178577286-8fbq8hwfw",
+      "data": {
+        "relationship": {
+          "id": "id-1779178577286-8fbq8hwfw",
+          "name": "Dim_Date.date → Fct_Loan.checkout_date",
+          "sourceTableId": "table-id-1779177531002-kn31nvyxf",
+          "sourceFieldId": "field-id-1779177531002-ir00o1wy9",
+          "targetTableId": "table-id-1779177525912-93nhoq6vs",
+          "targetFieldId": "field-1779177992659",
+          "type": "one-to-many"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1779177531002-kn31nvyxf",
+      "sourceHandle": "field-id-1779177531002-ir00o1wy9-source",
+      "target": "table-id-1779177525912-93nhoq6vs",
+      "targetHandle": "field-1779177999788-target",
+      "id": "edge-id-1779178586815-dz6j1ka7b",
+      "data": {
+        "relationship": {
+          "id": "id-1779178586815-dz6j1ka7b",
+          "name": "Dim_Date.date → Fct_Loan.due_date",
+          "sourceTableId": "table-id-1779177531002-kn31nvyxf",
+          "sourceFieldId": "field-id-1779177531002-ir00o1wy9",
+          "targetTableId": "table-id-1779177525912-93nhoq6vs",
+          "targetFieldId": "field-1779177999788",
+          "type": "one-to-many"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1779177531002-kn31nvyxf",
+      "sourceHandle": "field-id-1779177531002-ir00o1wy9-source",
+      "target": "table-id-1779177525912-93nhoq6vs",
+      "targetHandle": "field-1779178006411-target",
+      "id": "edge-id-1779178589373-sauzpf061",
+      "data": {
+        "relationship": {
+          "id": "id-1779178589373-sauzpf061",
+          "name": "Dim_Date.date → Fct_Loan.return_date",
+          "sourceTableId": "table-id-1779177531002-kn31nvyxf",
+          "sourceFieldId": "field-id-1779177531002-ir00o1wy9",
+          "targetTableId": "table-id-1779177525912-93nhoq6vs",
+          "targetFieldId": "field-1779178006411",
+          "type": "one-to-many"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1779177592194-zy2amyj12",
+      "sourceHandle": "field-id-1779177592194-edhgqhcdx-source",
+      "target": "table-id-1779179286848-s2tryixch",
+      "targetHandle": "field-1779179303041-target",
+      "id": "edge-id-1779179326069-aobmygdmy",
+      "data": {
+        "relationship": {
+          "id": "id-1779179326069-aobmygdmy",
+          "name": "Dim_Author.author_id → book_bridge_author.author_id",
+          "sourceTableId": "table-id-1779177592194-zy2amyj12",
+          "sourceFieldId": "field-id-1779177592194-edhgqhcdx",
+          "targetTableId": "table-id-1779179286848-s2tryixch",
+          "targetFieldId": "field-1779179303041",
+          "type": "one-to-one"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1779179286848-s2tryixch",
+      "sourceHandle": "field-id-1779179286848-tex2o2zen-source",
+      "target": "table-id-1779177502576-2c3npmigv",
+      "targetHandle": "field-id-1779177502576-fmqbnwija-target",
+      "id": "edge-id-1779179336861-k2d4neyw9",
+      "data": {
+        "relationship": {
+          "id": "id-1779179336861-k2d4neyw9",
+          "name": "book_bridge_author.book_id → Dim_Book.book_id",
+          "sourceTableId": "table-id-1779179286848-s2tryixch",
+          "sourceFieldId": "field-id-1779179286848-tex2o2zen",
+          "targetTableId": "table-id-1779177502576-2c3npmigv",
+          "targetFieldId": "field-id-1779177502576-fmqbnwija",
+          "type": "one-to-one"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    }
+  ],
+  "timestamp": 1779181310490,
+  "version": "1.0"
+}
