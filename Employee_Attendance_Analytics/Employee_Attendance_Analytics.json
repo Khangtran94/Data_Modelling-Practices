@@ -1,0 +1,1028 @@
+{
+  "tables": [
+    {
+      "id": "table-id-1779336314133-ku9cdzoe1",
+      "name": "Dim_Date",
+      "fields": [
+        {
+          "id": "field-id-1779336314133-4oxikzowh",
+          "name": "date",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1779336347825",
+          "name": "day",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779336351243",
+          "name": "day_name",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779336638665",
+          "name": "month",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779336643123",
+          "name": "month_name",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779336647734",
+          "name": "quarter",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779336650711",
+          "name": "year",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779336663260",
+          "name": "is_weekend",
+          "type": "BOOLEAN",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779336671908",
+          "name": "is_holiday",
+          "type": "BOOLEAN",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779343388498",
+          "name": "date_key",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1779336738695-axxfad2ox",
+      "name": "Dim_Employee",
+      "fields": [
+        {
+          "id": "field-id-1779336738695-2l3exa2d8",
+          "name": "employee_id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1779336760760",
+          "name": "employee_name",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779336958873",
+          "name": "department_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1779337002614-j22bismm8",
+            "fieldId": "field-id-1779337002614-0llukup2k"
+          }
+        },
+        {
+          "id": "field-1779336971187",
+          "name": "role_level",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779336978230",
+          "name": "hire_date",
+          "type": "DATE",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779343166597",
+          "name": "contract_type",
+          "type": "ENUM",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779343351225",
+          "name": "effect_from",
+          "type": "DATE",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779343361047",
+          "name": "effect_to",
+          "type": "DATE",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1779337002614-j22bismm8",
+      "name": "Dim_Department",
+      "fields": [
+        {
+          "id": "field-id-1779337002614-0llukup2k",
+          "name": "department_id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1779337024003",
+          "name": "department_name",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779337029889",
+          "name": "manager_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779337048542",
+          "name": "location",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1779339353862-83w5lvuy3",
+      "name": "Fct_Attendance",
+      "fields": [
+        {
+          "id": "field-id-1779339353862-6wp0fatns",
+          "name": "id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1779339365508",
+          "name": "date",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1779336314133-ku9cdzoe1",
+            "fieldId": "field-id-1779336314133-4oxikzowh"
+          }
+        },
+        {
+          "id": "field-1779339427678",
+          "name": "department_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1779337002614-j22bismm8",
+            "fieldId": "field-id-1779337002614-0llukup2k"
+          }
+        },
+        {
+          "id": "field-1779339380545",
+          "name": "employee_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1779336738695-axxfad2ox",
+            "fieldId": "field-id-1779336738695-2l3exa2d8"
+          }
+        },
+        {
+          "id": "field-1779339440317",
+          "name": "hour_worked",
+          "type": "DECIMAL",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779339447361",
+          "name": "is_present",
+          "type": "BOOLEAN",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779339453613",
+          "name": "is_absent",
+          "type": "BOOLEAN",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779339465245",
+          "name": "is_sick",
+          "type": "BOOLEAN",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779339476393",
+          "name": "is_pto",
+          "type": "BOOLEAN",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779344452934",
+          "name": "is_late",
+          "type": "BOOLEAN",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779344459807",
+          "name": "minutes_lated",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1779343006433-ie0n5j2xm",
+      "name": "Fct_PTO_Balance",
+      "fields": [
+        {
+          "id": "field-id-1779343006433-ggi84cj1b",
+          "name": "employee_id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true,
+          "foreignKey": {
+            "tableId": "table-id-1779336738695-axxfad2ox",
+            "fieldId": "field-id-1779336738695-2l3exa2d8"
+          }
+        },
+        {
+          "id": "field-1779343018621",
+          "name": "year",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779343027045",
+          "name": "pto_days_available",
+          "type": "DECIMAL",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1779343033497",
+          "name": "pto_days_used",
+          "type": "DECIMAL",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "id-1779338229415-giabfo70a",
+      "name": "Dim_Employee.department_id → Dim_Department.department_id",
+      "sourceTableId": "table-id-1779336738695-axxfad2ox",
+      "sourceFieldId": "field-1779336958873",
+      "targetTableId": "table-id-1779337002614-j22bismm8",
+      "targetFieldId": "field-id-1779337002614-0llukup2k",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1779339371202-femdvojlj",
+      "name": "Dim_Date.date → Fct_Attendance.date",
+      "sourceTableId": "table-id-1779336314133-ku9cdzoe1",
+      "sourceFieldId": "field-id-1779336314133-4oxikzowh",
+      "targetTableId": "table-id-1779339353862-83w5lvuy3",
+      "targetFieldId": "field-1779339365508",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1779339386015-gt9q8fzov",
+      "name": "Dim_Employee.employee_id → Fct_Attendance.employee_id",
+      "sourceTableId": "table-id-1779336738695-axxfad2ox",
+      "sourceFieldId": "field-id-1779336738695-2l3exa2d8",
+      "targetTableId": "table-id-1779339353862-83w5lvuy3",
+      "targetFieldId": "field-1779339380545",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1779339431060-ijxa77r9b",
+      "name": "Dim_Department.department_id → Fct_Attendance.department_id",
+      "sourceTableId": "table-id-1779337002614-j22bismm8",
+      "sourceFieldId": "field-id-1779337002614-0llukup2k",
+      "targetTableId": "table-id-1779339353862-83w5lvuy3",
+      "targetFieldId": "field-1779339427678",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1779343054382-gtmii2eax",
+      "name": "Dim_Employee.employee_id → Fct_PTO_Balance.id",
+      "sourceTableId": "table-id-1779336738695-axxfad2ox",
+      "sourceFieldId": "field-id-1779336738695-2l3exa2d8",
+      "targetTableId": "table-id-1779343006433-ie0n5j2xm",
+      "targetFieldId": "field-id-1779343006433-ggi84cj1b",
+      "type": "one-to-many"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "table-id-1779336314133-ku9cdzoe1",
+      "type": "tableNode",
+      "position": {
+        "x": -420,
+        "y": 500
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1779336314133-ku9cdzoe1",
+          "name": "Dim_Date",
+          "fields": [
+            {
+              "id": "field-id-1779336314133-4oxikzowh",
+              "name": "date",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1779336347825",
+              "name": "day",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779336351243",
+              "name": "day_name",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779336638665",
+              "name": "month",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779336643123",
+              "name": "month_name",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779336647734",
+              "name": "quarter",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779336650711",
+              "name": "year",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779336663260",
+              "name": "is_weekend",
+              "type": "BOOLEAN",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779336671908",
+              "name": "is_holiday",
+              "type": "BOOLEAN",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779343388498",
+              "name": "date_key",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 432,
+      "selected": false,
+      "positionAbsolute": {
+        "x": -420,
+        "y": 500
+      },
+      "dragging": false
+    },
+    {
+      "id": "table-id-1779336738695-axxfad2ox",
+      "type": "tableNode",
+      "position": {
+        "x": 800,
+        "y": 20
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1779336738695-axxfad2ox",
+          "name": "Dim_Employee",
+          "fields": [
+            {
+              "id": "field-id-1779336738695-2l3exa2d8",
+              "name": "employee_id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1779336760760",
+              "name": "employee_name",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779336958873",
+              "name": "department_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1779337002614-j22bismm8",
+                "fieldId": "field-id-1779337002614-0llukup2k"
+              }
+            },
+            {
+              "id": "field-1779336971187",
+              "name": "role_level",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779336978230",
+              "name": "hire_date",
+              "type": "DATE",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779343166597",
+              "name": "contract_type",
+              "type": "ENUM",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779343351225",
+              "name": "effect_from",
+              "type": "DATE",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779343361047",
+              "name": "effect_to",
+              "type": "DATE",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 360,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 800,
+        "y": 20
+      },
+      "dragging": false
+    },
+    {
+      "id": "table-id-1779337002614-j22bismm8",
+      "type": "tableNode",
+      "position": {
+        "x": 0,
+        "y": 300
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1779337002614-j22bismm8",
+          "name": "Dim_Department",
+          "fields": [
+            {
+              "id": "field-id-1779337002614-0llukup2k",
+              "name": "department_id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1779337024003",
+              "name": "department_name",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779337029889",
+              "name": "manager_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779337048542",
+              "name": "location",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 217,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 0,
+        "y": 300
+      },
+      "dragging": false
+    },
+    {
+      "id": "table-id-1779339353862-83w5lvuy3",
+      "type": "tableNode",
+      "position": {
+        "x": 660,
+        "y": 540
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1779339353862-83w5lvuy3",
+          "name": "Fct_Attendance",
+          "fields": [
+            {
+              "id": "field-id-1779339353862-6wp0fatns",
+              "name": "id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1779339365508",
+              "name": "date",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1779336314133-ku9cdzoe1",
+                "fieldId": "field-id-1779336314133-4oxikzowh"
+              }
+            },
+            {
+              "id": "field-1779339427678",
+              "name": "department_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1779337002614-j22bismm8",
+                "fieldId": "field-id-1779337002614-0llukup2k"
+              }
+            },
+            {
+              "id": "field-1779339380545",
+              "name": "employee_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1779336738695-axxfad2ox",
+                "fieldId": "field-id-1779336738695-2l3exa2d8"
+              }
+            },
+            {
+              "id": "field-1779339440317",
+              "name": "hour_worked",
+              "type": "DECIMAL",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779339447361",
+              "name": "is_present",
+              "type": "BOOLEAN",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779339453613",
+              "name": "is_absent",
+              "type": "BOOLEAN",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779339465245",
+              "name": "is_sick",
+              "type": "BOOLEAN",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779339476393",
+              "name": "is_pto",
+              "type": "BOOLEAN",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779344452934",
+              "name": "is_late",
+              "type": "BOOLEAN",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779344459807",
+              "name": "minutes_lated",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 467,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 660,
+        "y": 540
+      },
+      "dragging": false
+    },
+    {
+      "id": "table-id-1779343006433-ie0n5j2xm",
+      "type": "tableNode",
+      "position": {
+        "x": -100,
+        "y": 40
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1779343006433-ie0n5j2xm",
+          "name": "Fct_PTO_Balance",
+          "fields": [
+            {
+              "id": "field-id-1779343006433-ggi84cj1b",
+              "name": "employee_id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true,
+              "foreignKey": {
+                "tableId": "table-id-1779336738695-axxfad2ox",
+                "fieldId": "field-id-1779336738695-2l3exa2d8"
+              }
+            },
+            {
+              "id": "field-1779343018621",
+              "name": "year",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779343027045",
+              "name": "pto_days_available",
+              "type": "DECIMAL",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1779343033497",
+              "name": "pto_days_used",
+              "type": "DECIMAL",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 217,
+      "selected": false,
+      "positionAbsolute": {
+        "x": -100,
+        "y": 40
+      },
+      "dragging": false
+    }
+  ],
+  "edges": [
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1779336738695-axxfad2ox",
+      "sourceHandle": "field-1779336958873-source",
+      "target": "table-id-1779337002614-j22bismm8",
+      "targetHandle": "field-id-1779337002614-0llukup2k-target",
+      "id": "edge-id-1779338229415-giabfo70a",
+      "data": {
+        "relationship": {
+          "id": "id-1779338229415-giabfo70a",
+          "name": "Dim_Employee.department_id → Dim_Department.department_id",
+          "sourceTableId": "table-id-1779336738695-axxfad2ox",
+          "sourceFieldId": "field-1779336958873",
+          "targetTableId": "table-id-1779337002614-j22bismm8",
+          "targetFieldId": "field-id-1779337002614-0llukup2k",
+          "type": "one-to-many"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1779336738695-axxfad2ox",
+      "sourceHandle": "field-id-1779336738695-2l3exa2d8-source",
+      "target": "table-id-1779337235739-d5e9w1t6e",
+      "targetHandle": "field-id-1779337235740-xm4a4m4me-target",
+      "id": "edge-id-1779338247729-j2dkv7e11",
+      "data": {
+        "relationship": {
+          "id": "id-1779338247729-j2dkv7e11",
+          "name": "Dim_Employee.employee_id → Dim_PTO_Balance.employee_id",
+          "sourceTableId": "table-id-1779336738695-axxfad2ox",
+          "sourceFieldId": "field-id-1779336738695-2l3exa2d8",
+          "targetTableId": "table-id-1779337235739-d5e9w1t6e",
+          "targetFieldId": "field-id-1779337235740-xm4a4m4me",
+          "type": "one-to-one"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1779336314133-ku9cdzoe1",
+      "sourceHandle": "field-id-1779336314133-4oxikzowh-source",
+      "target": "table-id-1779339353862-83w5lvuy3",
+      "targetHandle": "field-1779339365508-target",
+      "id": "edge-id-1779339371202-femdvojlj",
+      "data": {
+        "relationship": {
+          "id": "id-1779339371202-femdvojlj",
+          "name": "Dim_Date.date → Fct_Attendance.date",
+          "sourceTableId": "table-id-1779336314133-ku9cdzoe1",
+          "sourceFieldId": "field-id-1779336314133-4oxikzowh",
+          "targetTableId": "table-id-1779339353862-83w5lvuy3",
+          "targetFieldId": "field-1779339365508",
+          "type": "one-to-many"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1779336738695-axxfad2ox",
+      "sourceHandle": "field-id-1779336738695-2l3exa2d8-source",
+      "target": "table-id-1779339353862-83w5lvuy3",
+      "targetHandle": "field-1779339380545-target",
+      "id": "edge-id-1779339386015-gt9q8fzov",
+      "data": {
+        "relationship": {
+          "id": "id-1779339386015-gt9q8fzov",
+          "name": "Dim_Employee.employee_id → Fct_Attendance.employee_id",
+          "sourceTableId": "table-id-1779336738695-axxfad2ox",
+          "sourceFieldId": "field-id-1779336738695-2l3exa2d8",
+          "targetTableId": "table-id-1779339353862-83w5lvuy3",
+          "targetFieldId": "field-1779339380545",
+          "type": "one-to-many"
+        }
+      },
+      "selected": false
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1779337002614-j22bismm8",
+      "sourceHandle": "field-id-1779337002614-0llukup2k-source",
+      "target": "table-id-1779339353862-83w5lvuy3",
+      "targetHandle": "field-1779339427678-target",
+      "id": "edge-id-1779339431060-ijxa77r9b",
+      "data": {
+        "relationship": {
+          "id": "id-1779339431060-ijxa77r9b",
+          "name": "Dim_Department.department_id → Fct_Attendance.department_id",
+          "sourceTableId": "table-id-1779337002614-j22bismm8",
+          "sourceFieldId": "field-id-1779337002614-0llukup2k",
+          "targetTableId": "table-id-1779339353862-83w5lvuy3",
+          "targetFieldId": "field-1779339427678",
+          "type": "one-to-many"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1779336738695-axxfad2ox",
+      "sourceHandle": "field-id-1779336738695-2l3exa2d8-source",
+      "target": "table-id-1779343006433-ie0n5j2xm",
+      "targetHandle": "field-id-1779343006433-ggi84cj1b-target",
+      "id": "edge-id-1779343054382-gtmii2eax",
+      "data": {
+        "relationship": {
+          "id": "id-1779343054382-gtmii2eax",
+          "name": "Dim_Employee.employee_id → Fct_PTO_Balance.id",
+          "sourceTableId": "table-id-1779336738695-axxfad2ox",
+          "sourceFieldId": "field-id-1779336738695-2l3exa2d8",
+          "targetTableId": "table-id-1779343006433-ie0n5j2xm",
+          "targetFieldId": "field-id-1779343006433-ggi84cj1b",
+          "type": "one-to-many"
+        }
+      }
+    }
+  ],
+  "timestamp": 1779352235345,
+  "version": "1.0"
+}
